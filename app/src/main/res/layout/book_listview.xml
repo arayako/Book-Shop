@@ -8,8 +8,7 @@
         android:layout_width="@dimen/icon_width"
         android:layout_height="@dimen/icon_hight"
         android:id="@+id/imageView2"
-        android:layout_margin="15dp"
-        android:background="bg_listview.png" />
+        android:layout_margin="15dp" />
 
     <LinearLayout
         android:orientation="vertical"
