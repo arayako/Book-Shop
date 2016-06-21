@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         private  String urlString;
         private boolean StatusABoolean = true;
         private String truePasswordString;
+        private String nameloginString;
 
 
 
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     if (userString.equals(jsonObject.getString("User"))) {
                         StatusABoolean = false;
                         truePasswordString = jsonObject.getString("Password");
-
+                        nameloginString = jsonObject.getString("Name");
                     } //if
 
 
@@ -102,7 +103,13 @@ public class MainActivity extends AppCompatActivity {
                             "ไม่มี" + userString + "ในฐานข้อมูลของเรา");
                 } else if (passwordString.equals(truePasswordString)) {
                     //Password True
+
+                    Intent intent = new Intent(context, BookActivity.class);
+                    intent.putExtra("Name", nameloginString);
+                    startActivity(intent);
+
                     Toast.makeText(context, "Welcome User", Toast.LENGTH_SHORT).show();
+                    finish();
                 } else {
                     //Password False
                     MyAlert myAlert = new MyAlert();
